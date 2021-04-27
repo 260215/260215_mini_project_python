@@ -47,6 +47,7 @@ class ATM(object):
 
     def withdraw(self, withdraw_amt):
         """
+        An amount of Rs 2 is deducted by the bank as conveyance amount
 
         :param withdraw_amt: it accepts the amount to be withdrawn
         :return: updated balance amount
@@ -54,7 +55,7 @@ class ATM(object):
         try:
             if self.balance >= withdraw_amt:
                 if withdraw_amt % 100 == 0:
-                    self.balance -= withdraw_amt
+                    self.balance -= withdraw_amt - 2
         except ValueError:
             print("Insufficient Balance", end="\n")
 
